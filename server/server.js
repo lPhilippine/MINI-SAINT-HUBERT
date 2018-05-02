@@ -23,9 +23,6 @@ app.use(express.static(path.join(__dirname, '/../public')));
 // Routes definition
 app.use('/api', require('./routes/routes'));
 
-// Passport middleware
-require('./middlewares/authentication.middleware')(app);
-
 // Setting errors management
 require('./middlewares/errors-handler.middleware')(app);
 
