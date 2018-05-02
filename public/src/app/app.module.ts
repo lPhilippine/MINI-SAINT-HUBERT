@@ -3,6 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
+
+import { SignupPage } from '../pages/signup/signup';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
@@ -13,6 +15,7 @@ import { RestProvider } from '../providers/rest/rest';
 @NgModule({
   declarations: [
     MyApp,
+    SignupPage,
     HomePage,
     ListPage
   ],
@@ -23,6 +26,7 @@ import { RestProvider } from '../providers/rest/rest';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    SignupPage,
     HomePage,
     ListPage
   ],
