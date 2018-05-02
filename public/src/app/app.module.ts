@@ -30,6 +30,7 @@ import { RestProvider } from '../providers/rest/rest';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RestProvider,
     RestProvider
   ]
 })
