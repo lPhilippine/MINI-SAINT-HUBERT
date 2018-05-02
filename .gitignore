@@ -1,3 +1,7 @@
 /public/node_modules
 /server/node_modules
 /node_modules
+public/.sourcemaps/main.js.map
+public/www/build/main.js
+public/www/build/main.js.map
+public/www/build/vendor.js.map
