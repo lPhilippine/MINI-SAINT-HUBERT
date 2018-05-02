@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Passager, inscrivez vous !</h1>
+    <form action="/inscription-users" method="post">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Nom</label>
+                <input class="form-control" placeholder="Votre nom" type="string" name="cl_nom">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Prenom</label>
+                <input class="form-control" placeholder="Votre Prenom" type="string" name="cl_prenom">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">N° de telephone</label>
+            <input class="form-control" placeholder="Telephone" type="string" name="cl_portable">
+        </div>
+        <div class="form-group">
+            <label for="inputAddress2">Email</label>
+            <input class="form-control" placeholder="Votre adresse mail" type="string" name="cl_mail">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">Mot de passe</label>
+                <input class="form-control" type="password" name="cl_mdp">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputState">Repetez le mot de passe</label>
+                <input class="form-control">
+            </div>
+        </div>
+</div>
+<div style="text-align:center">
+    <button type="submit" class="btn btn-warning" value="Envoyer">S'ENREGISTRER</button>
+</div>
+</form>
