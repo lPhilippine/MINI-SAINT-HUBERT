@@ -19,12 +19,12 @@ module.exports = (sequelize, DataTypes) => {
         // customer firstname
         cl_prenom: {
             type: DataTypes.STRING(50),
-            allowNull: false
+            allowNull: true
         },
         // customer mobile number
         cl_portable: {
             type: DataTypes.STRING(12),
-            allowNull: false
+            allowNull: true
         },
         // customer mail address
         cl_mail: {
@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
         // customer password
         cl_mdp: {
             type: DataTypes.STRING(100),
-            allowNull: false
+            allowNull: true
         },
     }, {
      

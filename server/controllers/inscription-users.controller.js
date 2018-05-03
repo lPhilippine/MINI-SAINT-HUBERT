@@ -12,7 +12,7 @@ class InscriptionUsersController {
   postInscription(req, res) {
     InscriptionUsersService.postInscription(req.body);
 
-    res.redirect('/connectionClientSuccess');
+  
 
   }
 }

@@ -14,21 +14,31 @@
  </ion-header>
   
  <ion-content padding>
-  <ion-list>
+    <form #form="ngForm" (ngSubmit)="signup()">
   
   <ion-item>
-  <ion-label floating>Username</ion-label>
-  <ion-input type="text"></ion-input>
+  <ion-label floating>Nom</ion-label>
+  <ion-input type="text" [(ngModel)]="client.cl_nom" name="nom"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Prénom</ion-label>
+    <ion-input type="text" [(ngModel)]="client.cl_prenom" name="prenom"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Portable</ion-label>
+    <ion-input type="text" [(ngModel)]="client.cl_portable" name="portable"></ion-input>
   </ion-item>
   
   <ion-item>
-  <ion-label floating>Email</ion-label>
-  <ion-input type="email"></ion-input>
+    <ion-label floating>Email</ion-label>
+    <ion-input type="email" [(ngModel)]="client.cl_mail" name="email"></ion-input>
   </ion-item>
   
   <ion-item>
   <ion-label floating>Password</ion-label>
-  <ion-input type="password"></ion-input>
+  <ion-input type="password" [(ngModel)]="client.cl_mdp" name="mdp"></ion-input>
   </ion-item>
   
   <ion-item>
@@ -36,9 +46,10 @@
     <ion-input type="password"></ion-input>
   </ion-item>
   
-  </ion-list>
+  
   
   <div padding>
-    <button ion-button block (click)="signup()">Sign In</button>
+    <button ion-button block  type = "submit" >Sign In</button>
   </div>
+</form>
  </ion-content>
