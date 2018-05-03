@@ -1,5 +1,6 @@
 webpackJsonp([1],{
 
+<<<<<<< HEAD
 /***/ 100:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -45,6 +46,8 @@ var LoginPage = /** @class */ (function () {
 
 /***/ }),
 
+=======
+>>>>>>> feature/001_-_Login
 /***/ 279:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
