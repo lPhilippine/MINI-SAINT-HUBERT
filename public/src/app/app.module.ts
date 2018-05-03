@@ -11,13 +11,15 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { RestProvider } from '../providers/rest/rest';
+import { ListClientPage } from '../pages/list-client/list-client';
 
 @NgModule({
   declarations: [
     MyApp,
     SignupPage,
     HomePage,
-    ListPage
+    ListPage,
+    ListClientPage
   ],
   imports: [
     BrowserModule,
@@ -28,14 +30,14 @@ import { RestProvider } from '../providers/rest/rest';
     MyApp,
     SignupPage,
     HomePage,
-    ListPage
+    ListPage,
+    ListClientPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestProvider,
-    RestProvider
   ]
 })
 export class AppModule {}
