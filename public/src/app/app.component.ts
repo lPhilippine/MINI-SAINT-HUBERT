@@ -7,6 +7,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { RequestDriverPage } from '../pages/request-driver/request-driver';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { LoginPage } from '../pages/login/login';
 
 @Component({
   templateUrl: 'app.html'
@@ -31,7 +32,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
       { title: 'Signup', component: SignupPage },
-      { title: 'RequestDriver', component: RequestDriverPage }
+      { title: 'RequestDriver', component: RequestDriverPage },
+      { title : 'Login', component: LoginPage}
     ];
 
   }
