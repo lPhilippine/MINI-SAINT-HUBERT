@@ -51,9 +51,11 @@ var SignupPage = /** @class */ (function () {
         console.log('ionViewDidLoad SignupPage');
     };
     SignupPage.prototype.signup = function () {
+        var _this = this;
         return this.restProvider.postUsers(this.client).subscribe(function (nodeResponse) {
             if (nodeResponse.success) {
                 console.log(nodeResponse);
+                _this.navCtrl.push(LoginPage);
             }
             else {
                 //todo alert

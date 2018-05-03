@@ -53,6 +53,7 @@ export class SignupPage implements OnInit {
    return this.restProvider.postUsers(this.client).subscribe(nodeResponse => {
       if (nodeResponse.success){
         console.log(nodeResponse);
+        this.navCtrl.push(LoginPage);
         
 
       }
