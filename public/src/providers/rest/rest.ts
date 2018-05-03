@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
 
 /*
   Generated class for the RestProvider provider.
@@ -10,8 +10,9 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class RestProvider {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello RestProvider Provider');
-  }
+  apiUrl = "http://localhost:3000/api";
 
+  constructor(public http: HttpClient) {
+    console.log("Hello RestProvider Provider");
+  }
 }

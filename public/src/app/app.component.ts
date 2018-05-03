@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { SignupPage } from '../pages/signup/signup';
+import { RequestDriverPage } from '../pages/request-driver/request-driver';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
@@ -29,7 +30,8 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
-      { title: 'Signup', component: SignupPage }
+      { title: 'Signup', component: SignupPage },
+      { title: 'RequestDriver', component: RequestDriverPage }
     ];
 
   }
