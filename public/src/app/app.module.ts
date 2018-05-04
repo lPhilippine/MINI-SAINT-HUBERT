@@ -17,11 +17,13 @@ import { RestProvider } from '../providers/rest/rest';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { LoginPage } from '../pages/login/login';
+import { SignupdriverPage } from '../pages/signupdriver/signupdriver';
 
 @NgModule({
   declarations: [
     MyApp,
     SignupPage,
+    SignupdriverPage,
     LoginPage,
     RequestDriverPage,
     HomePage,
@@ -38,6 +40,7 @@ import { LoginPage } from '../pages/login/login';
   entryComponents: [
     MyApp,
     SignupPage,
+    SignupdriverPage,
     LoginPage,
     RequestDriverPage,
     HomePage,

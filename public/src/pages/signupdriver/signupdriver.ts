@@ -5,25 +5,25 @@ import { HomePage } from '../home/home';
 import { RestProvider } from '../../providers/rest/rest';
 import { AlertController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
-import { Client } from '../../models/clients.model';
+import { Driver } from '../../models/drivers.model';
 import { LoginPage } from '../login/login';
 
 
 @IonicPage()
 @Component({
-  selector: 'page-signup',
-  templateUrl: 'signup.html',
+  selector: 'page-signupdriver',
+  templateUrl: 'signupdriver.html',
 })
 
-export class SignupPage implements OnInit {
+export class SignupdriverPage implements OnInit {
 
-@Input() client:Client;
+@Input() driver:Driver;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public restProvider: RestProvider, private alertCtrl: AlertController) {
   }
   ngOnInit(){
-    this.client = this.restProvider.getClient();
+    this.driver = this.restProvider.getDriver();
   }
 
   presentAlert(){
@@ -40,14 +40,15 @@ export class SignupPage implements OnInit {
   }
 
   signup(){
-   return this.restProvider.postUsers(this.client).subscribe(nodeResponse => {
+   return this.restProvider.postDriver(this.driver).subscribe(nodeResponse => {
       if (nodeResponse.success){
         console.log(nodeResponse);
-        this.navCtrl.push(LoginPage);
+        
       }
      else {
        //todo alert
      }
+     
     });
     
   }

@@ -28,7 +28,7 @@ router.post("/signupUser", InscriptionUsersController.postInscription);
 
 router.get("/", InscriptionUsersController.getInscription);
 
-router.post("/", InscriptionUsersController.postInscription);
+router.post("/signupDriver", InscriptionController.postInscription);
 
 router.get("/", usersController.getUsers);
 
