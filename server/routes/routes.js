@@ -14,7 +14,7 @@ router.get("/", ConnectionClientSuccessController.getClientSuccess);
 
 router.get("/", ConnectionSuccessController.getSuccess);
 
-router.get("/", ConnectionUserController.getUser);
+router.get("/connectionUser", ConnectionUserController.getUser);
 
 router.get("/", CoursesController.getCourses);
 

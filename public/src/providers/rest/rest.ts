@@ -1,5 +1,5 @@
 import 'rxjs/add/operator/map';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
 import { Injectable } from "@angular/core";
 import { Observable } from 'rxjs/Observable';
 import { Client } from '../../models/clients.model';
@@ -16,6 +16,7 @@ export class RestProvider {
 
   apiUrl = "http://localhost:3000/api";
   signupUser = this.apiUrl + '/signupUser';
+  loginUrl = this.apiUrl + '/connectionUser';
 
   private client:Client = new Client;
 
@@ -35,5 +36,21 @@ export class RestProvider {
       const nodeResponse: NodeResponse = JSON.parse(response.json());
         return nodeResponse;
     }));
+}
+
+login(email: string, password: string): Observable<NodeResponse> {
+  return this.http.post(this.loginUrl, { email: email, password: password })
+    .map((response: Response) => {
+      let nodeResponse: NodeResponse = JSON.parse(response.json());
+
+      if (nodeResponse.data) {
+      
+      } else {
+        // TODO treat wrong login
+
+      }
+      return nodeResponse;
+
+    });
 }
 }
