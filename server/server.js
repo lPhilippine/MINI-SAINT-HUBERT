@@ -15,10 +15,6 @@ var app = express();
 // Logger
 app.use(logger('dev'));
 
-// Body Parser configuration
-server.use(bodyParser.urlencoded({ extended = true}));
-server.use(bodyParser.json());
-
 // Request configuration
 require('./middlewares/headers.middleware')(app);
 
@@ -41,3 +37,7 @@ var server = http.createServer(app);
 // Importing libraries config
 require('./utils/libraries.utils').loadLibraries(server, port);
 
+
+// Body Parser configuration
+// server.use(bodyParser.urlencoded({ extended: true}));
+// server.use(bodyParser.json());
