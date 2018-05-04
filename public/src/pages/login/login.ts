@@ -28,7 +28,7 @@ export class LoginPage {
   }
 
   onLoggedin() {
-    this.restProvider.login(this.model.email, this.model.password).subscribe(response => {
+    this.restProvider.login(this.model.email , this.model.password).subscribe(response => {
       console.log(response)
         if (response.success) {
             console.log('connecter')

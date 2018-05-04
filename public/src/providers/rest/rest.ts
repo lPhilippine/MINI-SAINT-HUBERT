@@ -1,9 +1,9 @@
-import 'rxjs/add/operator/map';
-import { Http, Response } from '@angular/http';
+import "rxjs/add/operator/map";
+import { Http, Response } from "@angular/http";
 import { Injectable } from "@angular/core";
-import { Observable } from 'rxjs/Observable';
-import { Client } from '../../models/clients.model';
-import { NodeResponse } from '../../models/node_response';
+import { Observable } from "rxjs/Observable";
+import { Client } from "../../models/clients.model";
+import { NodeResponse } from "../../models/node_response";
 
 /*
   Generated class for the RestProvider provider.
@@ -13,44 +13,38 @@ import { NodeResponse } from '../../models/node_response';
 */
 @Injectable()
 export class RestProvider {
-
   apiUrl = "http://localhost:3000/api";
-  signupUser = this.apiUrl + '/signupUser';
-  loginUrl = this.apiUrl + '/connectionUser';
+  signupUser = this.apiUrl + "/signupUser";
+  loginUrl = this.apiUrl + "/login";
 
-  private client:Client = new Client;
+  private client: Client = new Client();
 
   constructor(public http: Http) {
     console.log("Hello RestProvider Provider");
   }
 
-  getClient():Client{
-
+  getClient(): Client {
     return this.client;
-
   }
 
-  postUsers(data: Client):Observable<NodeResponse> {
-    return this.http.post(this.signupUser, data)
-    .map((response=> {
+  postUsers(data: Client): Observable<NodeResponse> {
+    return this.http.post(this.signupUser, data).map(response => {
       const nodeResponse: NodeResponse = JSON.parse(response.json());
-        return nodeResponse;
-    }));
-}
-
-login(email: string, password: string): Observable<NodeResponse> {
-  return this.http.post(this.loginUrl, { email: email, password: password })
-    .map((response: Response) => {
-      let nodeResponse: NodeResponse = JSON.parse(response.json());
-
-      if (nodeResponse.data) {
-      
-      } else {
-        // TODO treat wrong login
-
-      }
       return nodeResponse;
-
     });
-}
+  }
+
+  login(email: string, password: string): Observable<NodeResponse> {
+    return this.http
+      .post(this.loginUrl, { email: email, password: password })
+      .map((response: Response) => {
+        let nodeResponse: NodeResponse = JSON.parse(response.json());
+
+        if (nodeResponse.data) {
+        } else {
+          // TODO treat wrong login
+        }
+        return nodeResponse;
+      });
+  }
 }

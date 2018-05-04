@@ -66,6 +66,7 @@ export class RequestDriverPage {
 
   }
 
+
   addInfoWindow(marker, content){
  
     let infoWindow = new google.maps.InfoWindow({

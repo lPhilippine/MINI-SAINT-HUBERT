@@ -16,20 +16,20 @@
  <ion-content padding>
   
   
-  <form #form="ngForm" (ngSubmit)="login()">
+  <form role="form" (ngSubmit)="f.form.valid && onLoggedin()" #f="ngForm" novalidate>
   <ion-item>
   <ion-label floating>Mail address</ion-label>
-  <ion-input type="email" [(ngModel)]="model.email" #email="ngModel" name="email"></ion-input>
+  <ion-input type="email" [(ngModel)]="model.email" name="email"></ion-input>
   </ion-item>
   
   <ion-item>
   <ion-label floating>Password</ion-label>
-  <ion-input type="password" [(ngModel)]="model.password" #password="ngModel" name="password"></ion-input>
+  <ion-input type="password" [(ngModel)]="model.password"  name="password"></ion-input>
   </ion-item>
 
   
   <div padding>
-    <button ion-button block type="submit" (click)="onLoggedin()">Login</button>
+    <button ion-button block type="submit">Login</button>
   </div>
 </form>
  </ion-content>
