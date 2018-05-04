@@ -17,32 +17,63 @@
     </ion-buttons>
   </ion-navbar>
  </ion-header>
- 
- <ion-content>
 
-  <div id="header">
-    <h1>Demande de prise en charge</h1>
-    <hr>
-    <br /><br />
-    <h2>Vous êtes géolocalisés à la position :</h2>
-  </div>
+<ion-content>
 
-  <div #map id="map"></div> 
-
+<div id="header">
+  <h1>Demande de prise en charge</h1>
   <hr>
+  <br />
+</div>
+<h2>Vous êtes géolocalisés à la position :</h2>
 
-  <div>
-      <input id="date" type="date">
+<div #map id="map"></div> 
 
-      <br /><br />
+<hr>
 
-      <input type="time" name="wakeup">
+<div id="formRequest">
+<form id="RequestDriver">
+    <label for="date">Veuillez choisir la date de votre demande de prise en charge</label>
+    <br />
+    <input id="date" type="date">
 
-      <br /><br />
+    <br />
 
-      <input type="time" name="wakeup">
+    <label for="time">Veuillez choisir une heure</label>
+    <br />
+    <input type="time" name="wakeup">
 
-    
+    <br />
 
-  </div>
- </ion-content>
+    <label for="number">Veuillez indiquer un nombre de passagers</label>
+    <br />
+    <input type="number" name="number">
+
+    <br />
+
+    <label for="departure">Lieu de départ</label>
+    <br />
+    <input type="departure" name="departure">
+    <br /><br />
+
+
+    <label for="text">Où voulez-vous aller?</label><br/><br />
+      
+        <label for=adresse>Adresse</label><br/>
+        <textarea id=adresse name=adresse rows=2 required></textarea><br />
+
+        <label for=codepostal>Code postal</label><br />
+        <input id=codepostal name=codepostal type=text required><br />
+
+        <label for=pays>Pays</label><br />
+        <input id=pays name=pays type=text required><br />
+
+
+</form>
+
+    <br /><br />
+
+<button class="button" id="book" type="submit" form="RequestDriver" value="submit">Je réserve</button>
+</div>
+</ion-content>
+
