@@ -40,15 +40,32 @@ export class SignupPage implements OnInit {
   }
 
   signup(){
-   return this.restProvider.postUsers(this.client).subscribe(nodeResponse => {
-      if (nodeResponse.success){
-        console.log(nodeResponse);
-        this.navCtrl.push(LoginPage);
-      }
-     else {
-       //todo alert
-     }
+
+    let alert = this.alertCtrl.create({
+      title: 'Inscription Réussie',
+      message: 'Vous pouvez désormais vous connecter avec vos identifiants!',
+      buttons: [{
+        text: 'Close',
+        role: 'cancel',
+        handler:() => {
+
+          this.restProvider.postUsers(this.client).subscribe(nodeResponse => {
+            if (nodeResponse.success){
+              
+              console.log(nodeResponse);
+              
+            }
+           else {
+             //todo alert
+           }
+           
+          });
+        }
+      }]
+        
     });
+    alert.present();
+  
     
   }
 

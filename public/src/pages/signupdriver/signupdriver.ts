@@ -40,16 +40,33 @@ export class SignupdriverPage implements OnInit {
   }
 
   signup(){
-   return this.restProvider.postDriver(this.driver).subscribe(nodeResponse => {
-      if (nodeResponse.success){
-        console.log(nodeResponse);
+
+    let alert = this.alertCtrl.create({
+      title: 'Inscription Réussie',
+      message: 'Vous pouvez désormais vous connecter avec vos identifiants!',
+      buttons: [{
+        text: 'Close',
+        role: 'cancel',
+        handler:() => {
+
+          this.restProvider.postDriver(this.driver).subscribe(nodeResponse => {
+            if (nodeResponse.success){
+              
+              console.log(nodeResponse);
+              
+            }
+           else {
+             //todo alert
+           }
+           
+          });
+        }
+      }]
         
-      }
-     else {
-       //todo alert
-     }
-     
     });
+    alert.present();
+
+   
     
   }
 
