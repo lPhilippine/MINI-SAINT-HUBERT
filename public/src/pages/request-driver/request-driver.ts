@@ -57,7 +57,8 @@ export class RequestDriverPage {
   let marker = new google.maps.Marker({
     map: this.map,
     animation: google.maps.Animation.DROP,
-    position: this.map.getCenter()
+    position: this.map.getCenter(),
+    draggable: true
   });
  
   let content = "<h4>Information!</h4>";         
