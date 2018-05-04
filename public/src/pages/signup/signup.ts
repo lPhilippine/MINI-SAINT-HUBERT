@@ -8,16 +8,6 @@ import { Observable } from 'rxjs/Observable';
 import { Client } from '../../models/clients.model';
 
 
-
-
-
-/**
- * Generated class for the SignupPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-signup',
@@ -27,7 +17,6 @@ import { Client } from '../../models/clients.model';
 export class SignupPage implements OnInit {
 
 @Input() client:Client;
-//  client:any = Client;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public restProvider: RestProvider, private alertCtrl: AlertController) {
@@ -53,9 +42,6 @@ export class SignupPage implements OnInit {
    return this.restProvider.postUsers(this.client).subscribe(nodeResponse => {
       if (nodeResponse.success){
         console.log(nodeResponse);
-        //this.navCtrl.push(LoginPage);
-        
-
       }
      else {
        //todo alert
