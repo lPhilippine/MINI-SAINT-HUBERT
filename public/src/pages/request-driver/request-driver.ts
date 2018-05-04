@@ -57,13 +57,37 @@ export class RequestDriverPage {
   let marker = new google.maps.Marker({
     map: this.map,
     animation: google.maps.Animation.DROP,
-    position: this.map.getCenter()
+    position: this.map.getCenter(),
+    draggable: true
   });
  
   let content = "<h4>Information!</h4>";         
  
   this.addInfoWindow(marker, content);
 
+  }
+
+  geocodeLatLng(geocoder, map, infowindow) {
+    let input = document.getElementById('latlng').nodeValue;
+    let latlngStr = input.split(',', 2);
+    let latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
+    geocoder.geocode({'location': latlng}, function(results, status) {
+      if (status === 'OK') {
+        if (results[1]) {
+          map.setZoom(11);
+          let marker = new google.maps.Marker({
+            position: latlng,
+            map: map
+          });
+          infowindow.setContent(results[1].formatted_address);
+          infowindow.open(map, marker);
+        } else {
+          window.alert('No results found');
+        }
+      } else {
+        window.alert('Geocoder failed due to: ' + status);
+      }
+    });
   }
 
   addInfoWindow(marker, content){
