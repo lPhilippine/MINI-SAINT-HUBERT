@@ -39,33 +39,35 @@ export class SignupPage implements OnInit {
     console.log('ionViewDidLoad SignupPage');
   }
 
+  
+
   signup(){
 
     let alert = this.alertCtrl.create({
-      title: 'Inscription Réussie',
+      title: 'Inscription Réussi',
       message: 'Vous pouvez désormais vous connecter avec vos identifiants!',
       buttons: [{
         text: 'Close',
         role: 'cancel',
         handler:() => {
-
-          this.restProvider.postUsers(this.client).subscribe(nodeResponse => {
-            if (nodeResponse.success){
-              
-              console.log(nodeResponse);
-              
-            }
-           else {
-             //todo alert
-           }
-           
-          });
+          
         }
       }]
         
     });
     alert.present();
-  
+
+   return this.restProvider.postUsers(this.client).subscribe(nodeResponse => {
+      if (nodeResponse.success){
+        
+        console.log(nodeResponse);
+        
+      }
+     else {
+       //todo alert
+     }
+     
+    });
     
   }
 
