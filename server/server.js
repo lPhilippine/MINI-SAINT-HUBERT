@@ -4,6 +4,7 @@ var path = require('path');
 var logger = require('morgan');
 var passport = require('passport');
 var session = require('express-session')
+var bodyParser = require('body-parser');
 
 var app = express();
 
@@ -36,3 +37,7 @@ var server = http.createServer(app);
 // Importing libraries config
 require('./utils/libraries.utils').loadLibraries(server, port);
 
+
+// Body Parser configuration
+// server.use(bodyParser.urlencoded({ extended: true}));
+// server.use(bodyParser.json());
